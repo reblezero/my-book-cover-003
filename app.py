@@ -75,7 +75,7 @@ if st.button("🚀 PDF 만들기 시작!"):
                 x += w_mm + GAP_MM
                 os.remove(temp_path)
             
-            pdf_bytes = pdf.output(dest='S').encode('latin-1')
+           pdf_bytes = pdf.output()
             st.download_button(label="📥 완성된 PDF 다운로드", data=pdf_bytes, file_name=f"covers_{datetime.now().strftime('%Y%m%d')}.pdf", mime="application/pdf")
         else:
             st.error("표지를 찾지 못했습니다.")
